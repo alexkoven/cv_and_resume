@@ -1,0 +1,388 @@
+% --- LaTeX CV Template - S. Venkatraman ---
+
+% --- Set document class and font size ---
+
+\documentclass[letterpaper, 11pt]{article}
+
+% --- Package imports ---
+
+\usepackage{hyperref, enumitem, longtable, amsmath, array}
+\usepackage{fancyhdr}
+\usepackage{ifthen}
+\setlength{\headheight}{13.59999pt}
+
+% --- Public/Private toggle ---
+\newboolean{privateversion}
+\setboolean{privateversion}{true} % Set to 'true' for private version, 'false' for public version
+
+% Define commands to conditionally show content
+\newcommand{\ifprivate}[2]{\ifthenelse{\boolean{privateversion}}{#1}{#2}} % Usage: \ifprivate{private content}{public content}
+\newcommand{\privateonly}[1]{\ifprivate{#1}{}} % Usage: \privateonly{content that only appears in private version}
+\newcommand{\publiconly}[1]{\ifprivate{}{#1}} % Usage: \publiconly{content that only appears in public version}
+
+% --- Page layout settings ---
+
+% Set page margins
+\usepackage[left=0.7in, right=0.8in, bottom=.8in, top=0.8in, headsep=0.25in, footskip=.2in]{geometry}
+
+% Set line spacing
+\renewcommand{\baselinestretch}{1.2}
+
+% --- Page formatting settings ---
+
+% Set link colors
+\usepackage[dvipsnames]{xcolor}
+\definecolor{CustomBlue}{HTML}{3e4bb3} % Define your custom color
+\hypersetup{colorlinks=true, linkcolor=MidnightBlue, urlcolor=MidnightBlue}
+
+% Set font to Libertine, including math support
+\usepackage{libertine}
+\usepackage[libertine]{newtxmath}
+
+% Enable page numbering
+\pagenumbering{arabic}
+
+% Define header and footer style
+\pagestyle{fancy}
+\fancyhf{} % Clear all header and footer fields
+\fancyhead[L]{Dr. Alexander Nettekoven} % Left header text
+\fancyhead[R]{Curriculum Vitae} % Right header text
+\fancyfoot[C]{\thepage} % Center footer with page number
+
+% Define first page style (no header)
+\fancypagestyle{firstpage}{
+  \fancyhf{} % Clear all header and footer fields
+  \fancyfoot[C]{\thepage} % Only keep page number in footer
+}
+
+% Define font size and color for section headings
+\newcommand{\headingfont}{\Large\color{CustomBlue}}
+
+% --- CV section settings ---
+
+% Note: each section of this table (Education, Awards, Publications etc.) is 
+% stored in a two-column table. The left-hand column is narrow (1 inch) and is 
+% meant to store dates. The right-hand column is wide (5.2 inches) and stores 
+% the main text.  Sections in which each entry might have multiple lines 
+% (e.g., Education) are stored in a 'SectionTable' environment). Sections in 
+% which each entry might just have one line are stored in a 'SectionTableSingleSpace'
+% environment. The only difference between the two environments is the line 
+% spacing between each entry. Both environments take one argument, which is the
+% title of the section. See main document for how these environments are used.
+
+% Define settings for left-hand column in which dates are printed
+\newcolumntype{R}{>{\raggedleft}p{1.3in}}
+
+% Define 'SectionTable' environment
+\newenvironment{SectionTable}[1]{
+	\renewcommand*{\arraystretch}{1.3} % CHANGE THIS NUMBER FOR TEXT SPACING
+	\setlength{\tabcolsep}{10pt}
+	\begin{longtable}{Rp{4.9in}} & #1 \\}
+{\end{longtable}}
+
+% Define 'SectionTableSingleSpace' environment
+\newenvironment{SectionTableSingleSpace}[1]{
+	\renewcommand*{\arraystretch}{1.0}
+	\setlength{\tabcolsep}{10pt}
+	\begin{longtable}{Rp{5.2in}} & #1 \\[0.6em]}
+{\end{longtable}\vspace{-.3cm}}
+
+% --- Document starts here ---
+
+\begin{document}
+\thispagestyle{firstpage} % This must be right after \begin{document}
+
+% \vspace{0.3cm} % Adjust the vertical spacing before the line
+% \hrule height 0.01pt % This adds a horizontal line
+\vspace{0.7cm} % Adjust spacing after the line
+
+
+% --- Name and contact information ---
+% Name and date of last update to this document
+
+\noindent{\LARGE{\color{CustomBlue}{Dr. Alexander Nettekoven}}
+\hfill{\it\footnotesize Updated \today}}
+% \hfill{\it\footnotesize Updated January 16, 2025}}
+
+% % --- Contact information and other items ---
+
+\vspace{0.3cm} 
+\begin{center}
+% Ignore errors because they don't understand the \ifprivate
+\ifprivate{\begin{tabular}{p{2.1in}p{2.1in}p{2.1in}}}{\begin{tabular}{p{1.9in}p{1.7in}p{2.5in}}}
+% Line 1: Email, GitHub, office location
+\textbf{Role}: Postdoc @ UTexas      &
+\textbf{Website}: \href{https://www.alexkoven.com/}{alexkoven.com}    &
+\textbf{Email}: \ifprivate{nettekoven@utexas.edu}{alexkoven.inquiry@gmail.com} \\
+
+% Line 2: Phone number, LinkedIn, citizenship
+\textbf{US Work}: No Restrictions & 
+\textbf{GitHub}: \href{https://github.com/alexkoven}{alexkoven}  &
+\textbf{LinkedIn}: \href{https://linkedin.com/in/alexander-nettekoven}{alexander-nettekoven}  
+\end{tabular}
+\end{center}
+
+\vspace{0.2cm} 
+
+% \vspace{0.3cm} % Adjust the vertical spacing before the line
+\hrule height 0.5pt % This adds a horizontal line
+% \vspace{0.3cm} % Adjust spacing after the line
+
+% % --- Section: Research interests ---
+
+% \begin{SectionTable}{\headingfont Research Interests}
+% & Multi-agent AI systems, Autonomous drones, Robotics, Decision-making AI, Additive manufacturing, Control theory
+% \end{SectionTable}
+
+
+% --- Section: Education ---
+
+\begin{SectionTable}{\headingfont Education}
+2019 -- 2022 & 
+\textbf{University of Texas at Austin}, Austin, TX \newline
+Ph.D. in Mechanical Engineering (Specialization: Robotics) \\ 
+
+2016 -- 2018 & 
+\textbf{University of Texas at Austin}, Austin, TX \newline
+M.Sc. in Mechanical Engineering \\ 
+
+2011 -- 2016 & 
+\textbf{RWTH Aachen University}, Aachen, Germany \newline
+B.Sc. in Mechanical Engineering \\
+
+% 2014 -- 2015 &
+% \textbf{University of Michigan}, Ann Arbor, MI \newline 
+% Visiting Undegraduate Research Scholar
+
+\end{SectionTable}
+
+\vspace{-0.8cm}
+
+% --- Section: Professional Experience ---
+
+\begin{SectionTable}{\headingfont Professional Experience}
+
+06/2025 -- Present &
+\textbf{Center for Autonomy}, UT Austin -- \textbf{Postdoctoral Fellow} \newline
+Systematic evaluation of state-of-the-art robot foundation models (VLA models, World Action Models) in simulation and on a low-cost bimanual manipulator; benchmarking policy performance and identifying failure sources. \\
+
+09/2022 -- 06/2025 &
+\textbf{Multi AI, Inc.}, Austin, TX / San Francisco, CA -- \textbf{Co-Founder \& CEO} \newline
+Grew company from PhD-stage prototype to Pentagon-contracted product; built multi-agent AI platform (decentralized MCTS + generative AI) achieving 38\% improvement in disrupted logistics scenarios. \\
+
+11/2021 -- 09/2022 &
+\textbf{Droneconia LLC} (later Multi AI, Inc.), Austin, TX -- \textbf{Co-Founder \& Chief Technology Officer} \newline
+Designed initial multi-agent AI algorithms for autonomous UAV/UGV mission planning; secured and delivered Air Force SBIR Phase I contract from AFWERX Agility Prime. \\
+
+01/2019 -- 12/2022 &
+\textbf{Autonomous Systems Group}, UT Austin -- \textbf{NSF-Supported Researcher} \newline
+Research on autonomous systems and robotics in NSF-funded collaboration with Caltech, Berkeley, Northeastern, and RPI.\\
+
+08/2016 -- 12/2018 &
+\textbf{Advanced Manufacturing Center}, UT Austin -- \textbf{Research Assistant} \newline
+Designed and commissioned hardware testbeds for advanced manufacturing processes; developed data-driven control and anomaly detection pipelines for automated process monitoring. \\
+
+01/2016 -- 04/2016 &
+\textbf{Mercedes-Benz}, Stuttgart, Germany -- \textbf{Robot Operations Intern} \newline
+ABB robotic assembly optimization for the OM-651 diesel engine at Daimler headquarters. \\
+
+11/2015 -- 12/2015 &
+\textbf{Ford Germany}, Cologne, Germany -- \textbf{Maintenance Intern} \newline
+Maintenance and fault diagnosis of ABB industrial robots in aluminum die casting production. \\
+
+04/2015 -- 11/2015 &
+\textbf{Fraunhofer Institute of Laser Technology}, Aachen, Germany -- \textbf{Research Assistant} \newline
+Fabricated iron-aluminide alloy specimens via Laser Metal Deposition (LMD), achieving densities $>$99.5\%; programmed end-effector trajectories and managed laser safety protocols. \\
+
+10/2014 -- 02/2015 &
+\textbf{University of Michigan}, Ann Arbor, MI -- \textbf{Undergraduate Research Scholar} \newline
+Signal detection for Electrohydrodynamic Jet (e-jet) printing in Prof. Kira Barton's lab. \\
+
+% 07/2014 -- 10/2014 & 
+% \textbf{Machine Tools and Production Engineering Lab} (Aachen, Germany) -- \textbf{Research Assistant};
+% Assisting strategic positioning of global production sites.
+
+\end{SectionTable}
+\vspace{-0.5cm}
+
+% --- Section: Achievements ---
+
+\begin{SectionTable}{\headingfont Achievements \& Recognitions}
+
+
+
+% 2025 & \textbf{AFLCMC/WLQ and Force Design, Integration, and Wargaming Directorate} \\
+
+2024 & \textbf{Pentagon Wargaming Development Partnership}. Six-figure SBIR Phase III by Chief of Wargaming, OUSD A-S (Pentagon), and Air Force Autonomy Prime. \\
+
+2024 & \textbf{Invited Expert to Texas AI Caucus}. Advised Texas State Representative Giovanni Capriglione on AI policy and commercial regulations. \\
+
+2024 & \textbf{Seven-Figure TACFI Selection by US Air Force}. Awarded for highly-selective Funding Increase program by Air Force Ventures for decision-support AI. \\
+
+2023 & \textbf{Major Phase III Award by US Air Force Autonomy Prime}. Six-figure contract for multi-agent coordination AI. \\
+
+% 2023 & \textbf{Expert Speaker on Generative AI}. Industry panelist at Applied Intelligence Summit 2023. \\
+
+2023 & \textbf{Capital Factory Accelerator}. Selected for Texas's largest and most active startup accelerator. \\
+
+2022 & \textbf{Launch Texas Awardee}. Launch Texas awardee of newly-founded space entrepreneurship program at UT Austin. \\
+
+2022 & \textbf{Major Phase II Award by US Air Force Agility Prime}. Secured first six-figure contract for multi-agent coordination AI to accelerate rapid scaling in DoD. \\
+
+2022 & \textbf{Selection for Elite Startup Accelerators}. MassChallenge finalist out of 400 startups and selection to exclusive Air Force Technology Acceleration Program. \\
+
+2022 & \textbf{Texas Venture Labs Commercialization Award Winner}. Five-figure prize for highest commercialization success among Texas student startups. \\
+
+2022 & \textbf{Bridge-to-Phase II Award Winner}. UT Discovery grant for accelerating national security decision-support AI. \\
+
+2022 & \textbf{Major Air Force Programs and Prime Support}. Formal endorsements from AFWERX, AFRL ACT3, RQQ, RISB, and Textron for startup's solution offering. \\
+
+2021 & \textbf{GAIN Mechanical Engineering Department Award}. Outstanding research contributions award at University of Texas at Austin. \\
+
+2018-2020 & \textbf{National Science Foundation (NSF)-Supported Researcher}. Selected researcher on multi-year project with CalTech, Berkeley, Northeastern, and RPI. \\
+
+2017 & \textbf{Sandia National Laboratories Grant}. Proposed and won five-figure funding for innovative laser pre-scan process enhancing 3D printing quality. \\
+
+2015 & \textbf{Undergraduate Research Opportunity Award}. Dual award by the University of Michigan and RWTH Aachen University for undergraduate research. \\
+
+\end{SectionTable}
+
+\vspace{-0.5cm}
+
+% --- Section: Publications ---
+
+\begin{SectionTable}{\headingfont Publications}
+
+2024 &
+\textbf{Alexander Nettekoven}, Matthew Carlin, and Ufuk Topcu. ``Agile Combat Employment System (ACES) Model Modifications.'' \textit{Technical Report to US Air Force AFWERX SBIR Phase III}. \\
+
+2023 &
+\textbf{Alexander Nettekoven}, Matthew Carlin, and Ufuk Topcu. ``Large-Scale Fleet Coordination for Contested Logistics.'' \textit{Technical Report to US Air Force AFWERX SBIR Phase II}. \\
+
+2022 &
+\textbf{Alexander Nettekoven}. ``On the Feasibility of 3D Printing with Multicopters.'' \textit{Ph.D. Dissertation at the University of Texas at Austin}. \\
+
+2022 &
+\textbf{Alexander Nettekoven}, Scott Fish, Joseph Beaman, and Ufuk Topcu. ``Towards online monitoring and data-driven control: a study of segmentation algorithms for infrared images of the powder bed.'' \textit{2022 International Solid Freeform Fabrication Symposium}. \\
+
+2021 &
+\textbf{Alexander Nettekoven}, Nicholas Franken, and Ufuk Topcu. ``Geometrical Analysis of Simple Contours Deposited by a 3D Printing Hexacopter.'' \textit{2021 International Solid Freeform Fabrication Symposium}. \\
+
+2021 &
+\textbf{Alexander Nettekoven} and Ufuk Topcu. ``A 3D Printing Hexacopter: Design and Documentation.'' \textit{2021 International Conference on Unmanned Aircraft Systems (ICUAS)}. \\
+
+2021 &
+Zizhao Wang, Xuesu Xiao, \textbf{Alexander J. Nettekoven}, Kadhiravan Umasankar, Anika Singh, Sriram Bommakanti, Ufuk Topcu, and Peter Stone. ``From agile ground to aerial navigation: Learning from learned hallucination.'' \textit{2021 IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)}. \\
+
+2019 &
+Yingshui Tan, Baihong Jin, \textbf{Alexander Nettekoven}, Yuxin Chen, Yisong Yue, Ufuk Topcu, and Alberto Sangiovanni-Vincentelli. ``An encoder-decoder based approach for anomaly detection with application in additive manufacturing.'' \textit{2019 18th IEEE International Conference on Machine Learning and Applications (ICMLA)}. \\
+
+2019 &
+Zhe Xu, \textbf{Alexander J. Nettekoven}, A. Agung Julius, and Ufuk Topcu. ``Graph temporal logic inference for classification and identification.'' \textit{2019 IEEE 58th Conference on Decision and Control (CDC)}. \\
+
+2018 &
+\textbf{Alexander Nettekoven}. ``Predictive iterative learning control with data-driven model for near-optimal laser power in selective laser sintering.'' \textit{2018 Master's Thesis}. \\
+
+2018 &
+\textbf{Alexander Nettekoven}, Scott Fish, Joseph Beaman, and Ufuk Topcu. ``Predictive Iterative Learning Control with Data-Driven Model for Optimal Laser Power in Selective Laser Sintering.'' \textit{2018 International Solid Freeform Fabrication Symposium}.
+\end{SectionTable}
+
+\vspace{-0.5cm}
+
+
+% --- Section: Services ---
+
+\begin{SectionTable}{\headingfont Services}
+2021 -- present & \textbf{Peer Reviewer for Robotics and Engineering Conferences:}
+\begin{itemize}[noitemsep, topsep=0pt]
+\item International Conference on Robotics and Automation (ICRA)
+\item International Conference on Intelligent Robots and Systems (IROS)
+\item IEEE Robotics and Automation Letters (RA-L)
+\item American Control Conference (ACC)
+\item North American Manufacturing Research Conference (NAMRC)
+\item Solid Freeform Fabrication Symposium (SFF)
+\item Conference on Automation Science and Engineering (CASE)
+\end{itemize} \\
+
+2020 -- present & \textbf{Guest Lecturer for Undergraduate Feedback Control}. Presentations of real-world control applications to engineering students at UT Austin. \\
+
+2025 & \textbf{STEM Outreach, Del Valle ISD}. Taught students to build and program a self-driving RC car. \\
+
+2021 & \textbf{Texas Robotics Motion Capture Space}. Designed, directed, and commissioned high-resolution motion capture space for UT Austin robotics program. \\
+
+2021 & \textbf{Public Safety Drone Collaboration Workshop}. Organized Drone workshop for Austin PD, Texas DPS, Travis County Sheriff's Office, and Austin Fire. \\
+
+2020 -- 2022 & \textbf{Research Mentor}. Supervised 7 undergraduate research assistants: Sriram Bommakanti, Kadhir Umasankar, Nicholas Franken, Harrison Jin, Meenakshi Swaminathan, Steven Diep, and Mario Gonzalez. \\
+
+2020 & \textbf{Research Instructor}. Led full-time summer research internships for 17 undergraduate students in the Autonomous Systems Group. \\
+
+\end{SectionTable}
+
+\vspace{-0.5cm}
+
+\begin{SectionTable}{\headingfont Press Coverage}
+
+2023 & Jeremey R. Dunn. "Tech Connect partner uses AI to assist in in-theater mission planning." \textit{Defense Visual Information Distribution Service} (08/23/2023). \\
+
+2023 & Deborah Yao. "Hybrid AI Reduces Generative AI Hallucinations, Applied Intelligence Live! Austin 2023." \textit{AI Business} (09/21/2023). \\
+
+2022 & Nat Levy. "Ready for Launch." \textit{Texas Engineer} (2022-2023 issue).
+
+\end{SectionTable}
+
+\vspace{-1.0cm}
+
+
+\begin{SectionTable}{\headingfont Invited Talks and Presentations}
+12/2024 & US Air Force Wargaming Offices and OUSD A-S Chief of Wargaming Workshop. \\
+
+03/2024 & HAF/a5, SAF/SA, HAF/A4, RGPA, AMC A5-8, AMC A9 Wargaming Capabiltiy Review. \\
+
+09/2023 & Capital Factory Accelerator First Look Kickoff. \\
+
+08/2023 & National Security Innovation Council (NSIC). \\
+
+05/2023 & Texas Innovation Center Board Meeting and Luncheon. \\
+
+11/2022 & Launch Texas Award and Kickoff at the University of Texas at Austin. \\
+
+09/2022 & Blue Tech Collider Multi-Drone Show Case. \\
+
+08/2022 & Solid Freeform Fabrication Conference 2022. \\
+
+07/2022 & MassChallenge Early-Stage Startup Accelerator Kickoff. \\
+
+02/2022 & Hanscom and Incirlik US Air Force Base Capability Review. \\
+
+08/2021 & Solid Freeform Fabrication Conference 2021. \\
+
+06/2021 & International Conference on Unmanned Aircraft Systems. \\
+
+04/2021 & Texas Robotics Research Seminar. \\
+
+02/2021 & Graduate and Industry Networking event, University of Texas at Austin. \\
+
+10/2020 & Walker Department of Mechanical Engineering, University of Texas at Austin. \\
+
+03/2019 & NSF Cyberphysical System Review with Caltech, Berkeley, Northeastern, RPI. \\
+
+08/2018 & Solid Freeform Fabrication Conference 2018. \\
+
+02/2017 & America Makes Project Review with US Air Force AFRL. \\
+
+06/2016 & International Center for Sustainable Textiles at RWTH Aachen University. \\
+
+02/2015 & Barton Research Group at the University of Michigan. \\
+
+\end{SectionTable}
+
+
+% --- End of CV! ---
+
+\end{document}
+
+
+
+
+
+
