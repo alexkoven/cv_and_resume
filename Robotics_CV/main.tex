@@ -26,7 +26,7 @@
 \usepackage[left=0.7in, right=0.8in, bottom=.8in, top=0.8in, headsep=0.25in, footskip=.2in]{geometry}
 
 % Set line spacing
-\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\baselinestretch}{1.1}
 
 % --- Page formatting settings ---
 
@@ -140,7 +140,8 @@
 \begin{SectionTable}{\headingfont Education}
 2019 -- 2022 & 
 \textbf{University of Texas at Austin}, Austin, TX \newline
-Ph.D. in Mechanical Engineering (Specialization: Robotics) \\ 
+Ph.D. in Mechanical Engineering (Specialization: Robotics) \newline
+NSF CPS Researcher (2019--2022) $|$ Advisor: Prof. Ufuk Topcu \\
 
 2016 -- 2018 & 
 \textbf{University of Texas at Austin}, Austin, TX \newline
@@ -150,9 +151,9 @@ M.Sc. in Mechanical Engineering \\
 \textbf{RWTH Aachen University}, Aachen, Germany \newline
 B.Sc. in Mechanical Engineering \\
 
-% 2014 -- 2015 &
-% \textbf{University of Michigan}, Ann Arbor, MI \newline 
-% Visiting Undegraduate Research Scholar
+2014 -- 2015 &
+\textbf{University of Michigan}, Ann Arbor, MI \newline
+Exchange Research Scholar, Barton Research Group \\
 
 \end{SectionTable}
 
@@ -163,36 +164,41 @@ B.Sc. in Mechanical Engineering \\
 \begin{SectionTable}{\headingfont Professional Experience}
 
 06/2025 -- Present &
-\textbf{Center for Autonomy}, UT Austin -- \textbf{Postdoctoral Fellow}
+\textbf{Center for Autonomy}, UT Austin -- \textbf{Postdoctoral Fellow} \newline
+Systematically deploying and evaluating state-of-the-art robot foundation models, including vision-language-action (VLA) and world action models (WAM):
 \begin{itemize}[noitemsep, topsep=2pt]
-\item Systematic deployment and evaluation of robot foundation models (VLA models, World Action Models) in simulation and on physical hardware
-\item Building and deploying learned policies on a low-cost bimanual manipulator; benchmarking policy performance and identifying failure sources
+\item Built low-cost (\$<1,200 including onboard compute) bimanual manipulator testbed designed for rapid imitation learning iterations; enabling efficient policy learning with world model verifiers
+\item Finetuned, deployed, and evaluated DreamZero, \(\pi\)0.5, SmolVLA, ACT on pick-and-place and household cleaning tasks across simulation and real-world settings
 \end{itemize} \\
 
 09/2022 -- 06/2025 &
-\textbf{Multi AI, Inc.}, Austin, TX / San Francisco, CA -- \textbf{Co-Founder \& CEO}
+\textbf{Multi AI, Inc.}, Austin, TX / San Francisco, CA -- \textbf{Co-Founder \& CEO} \newline
+Built and scaled a multi-agent reinforcement learning platform for fleet coordination problems ($>$100 vehicles) in the US Air Force and Pentagon:
 \begin{itemize}[noitemsep, topsep=2pt]
-\item Built multi-agent AI platform (decentralized MCTS + generative AI) for adaptive decision-making under adversarial conditions, outperforming baseline by 38\% in field evaluations
-\item Owned full AI development lifecycle from architecture through government delivery; grew company from PhD-stage prototype to Pentagon-contracted product
+\item Outperformed baseline decision-making by 38\% on key resource delivery metrics in contested logistics; computed in $<$15 min vs.\ $>$24h for human planners
+\item Received numerous Air Force SBIR Phase I/II/III contracts and a TACFI selection (7-figure contract funding total)
+\item Tech stack: multi-agent RL for fleet coordination and motion planning; LLMs for human-machine interfacing; imitation learning for warm-starting policies with expert demonstrations
 \end{itemize} \\
 
 11/2021 -- 09/2022 &
-\textbf{Droneconia LLC} (later Multi AI, Inc.), Austin, TX -- \textbf{Co-Founder \& CTO}
+\textbf{Droneconia LLC} (later Multi AI, Inc.), Austin, TX -- \textbf{Co-Founder \& CTO} \newline
+Advanced a PhD-stage prototype to secure the first SBIR Phase I contract with Air Force Agility Prime:
 \begin{itemize}[noitemsep, topsep=2pt]
-\item Designed and implemented the initial multi-agent AI architecture for autonomous UAV/UGV mission planning; secured and delivered Air Force SBIR Phase I contract from AFWERX Agility Prime
+\item Developed a rapid multi-agent motion and mission planner with decentralized Monte Carlo Tree Search (MCTS) for autonomous UAV/UGV planning; scaled to 100+ vehicles
 \end{itemize} \\
 
 01/2019 -- 12/2022 &
-\textbf{Autonomous Systems Group}, UT Austin -- \textbf{NSF-Supported Researcher}
+\textbf{Autonomous Systems Group}, UT Austin -- \textbf{NSF-Supported Researcher} \newline
+Developed novel robotic systems and algorithms via robot learning, formal methods, and controls in collaboration with Caltech, UC Berkeley, Northeastern, and RPI:
 \begin{itemize}[noitemsep, topsep=2pt]
-\item End-to-end system engineering of the world's first aerial 3D printing hexacopter; designed and commissioned novel hardware testbeds from scratch
-\item Developed learning-based algorithms for multiple robot morphologies as part of an NSF CPS project spanning Caltech, UC Berkeley, Northeastern, and RPI
-\item Published at IROS, ICUAS, IEEE CDC, ICMLA, and SFF; mentored 20+ undergraduate researchers
+\item Designed and deployed novel hardware testbeds, including the world's first aerial 3D printing hexacopter built with custom MPC and PID/LQR feedback control for in-flight material deposition
+\item Achieved 5.43\,mm RMSE positioning accuracy, competitive with ground-based robotic systems
+\item Supervised 20+ undergraduate researchers; published at IROS, ICUAS, IEEE CDC, ICMLA, and SFF
 \end{itemize} \\
 
 08/2016 -- 12/2018 &
 \textbf{Advanced Manufacturing Center}, UT Austin -- \textbf{Research Assistant} \newline
-Designed and commissioned hardware testbeds for advanced manufacturing processes; developed data-driven control and anomaly detection pipelines for automated process monitoring. \\
+Research in data-driven control (Predictive Iterative Learning Control) and computer vision for advanced manufacturing processes and robotics applications. \\
 
 01/2016 -- 04/2016 &
 \textbf{Mercedes-Benz}, Stuttgart, Germany -- \textbf{Robot Operations Intern} \newline
@@ -273,7 +279,7 @@ Signal detection for Electrohydrodynamic Jet (e-jet) printing in Prof. Kira Bart
 
 & \textbf{Team:} Product and project management; technical leadership; team building and hiring; technical communication and presentations \\
 
-& \textbf{Languages:} German (native), English (fluent) \\
+& \textbf{Languages:} German (native), English (native) \\
 
 \end{SectionTable}
 
