@@ -1,0 +1,8 @@
+**Why do you want to work at π?**
+Physical Intelligence's work to build robotic foundation models that enable robots to perform complex, long-horizon manipulation tasks in unstructured environments is extremely interesting to me. Seeing a robot perform tasks autonomously, no matter the task's complexity, creates genuine joy, curiosity, and eagerness to see how far we can push the limits of intelligent physical systems. Simply put, the development of these robotics systems would be something I would gladly look back on in 30 years.
+
+**Describe your research interests**
+My research focuses on real-world deployment of robot foundation models for manipulation, specifically fine-tuning and evaluating VLA models on dexterous manipulation tasks and understanding what makes learned policies reliable outside the lab. I'm particularly interested in closing the gap between controlled benchmarks and robust real-world performance across long-horizon tasks.
+
+**Describe your most significant accomplishment or research result**
+At Multi AI, I built and scaled a multi-agent reinforcement learning platform for autonomous fleet coordination deployed with the US Air Force and Pentagon. The system coordinated 100+ vehicles and outperformed baseline decision-making by 38% on resource delivery metrics in contested logistics scenarios, reducing planning time from 24+ hours of manual work to under 5 minutes. We secured multiple SBIR Phase I/II/III contracts and a TACFI selection totaling seven figures in contract funding. The core technical contribution was a decentralized multi-agent RL architecture that remained robust under adversarial and uncertain real-world conditions.
